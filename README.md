@@ -11,10 +11,12 @@ This Python script calculates the Tree Similarity of Edit Distance (TSED) betwee
 
 ## Usage
 
-1. Ensure that the necessary dependencies are installed:
+1. Ensure that the necessary dependencies are installed, using Python 3.9:
 
     ```
-    pip install apted tree_sitter_languages
+    pip install tree-sitter==0.20.4
+    pip install tree-sitter-languages==1.10.2
+    pip install apted==1.0.3 
     ```
 
 2. Modify the script as needed, providing the language, origin tree, and target tree information.
