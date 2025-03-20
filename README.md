@@ -4,19 +4,46 @@
 
 This Python script calculates the Tree Similarity of Edit Distance (TSED) between two trees, utilizing the APTED (A Framework for Tree Edit Distance) library. TSED is commonly employed in tasks such as code review and evaluation, offering a metric for assessing the structural similarity between two tree structures.
 
+
+## Requirements
+
+ - [Python `<=` 3.9](https://www.python.org/doc/versions/)
+
+The dependencies required to run `TSED` are validated to work up to Python
+major version 3.9.
+There are a number of ways to manage multiple Python versions,
+such as [pyenv](https://github.com/pyenv/pyenv).
+Manually installing and managing Python versions is also an option.
+
 ## Dependencies
 
-- apted
-- tree_sitter_languages
+- [apted](https://pypi.org/project/apted/)
+- [tree_sitter_languages](https://pypi.org/project/tree-sitter-languages/)
 
 ## Usage
 
-1. Ensure that the necessary dependencies are installed, using Python 3.9:
+Using a virtual environment is a useful way to manage dependencies,
+particularly with multiple versions of Python.
 
-    ```
-    pip install tree-sitter==0.20.4
-    pip install tree-sitter-languages==1.10.2
-    pip install apted==1.0.3 
+Confirm you are using Python 3.9:
+
+```sh
+% python -V $ # Should print out Python 3.9.21
+```
+
+Set up a virtual environment and activate it:
+
+```sh
+% python -m venv .venv
+% source .venv/bin/activate
+```
+
+Follow the rest of the steps in the virtual environment
+
+1. Ensure that the necessary dependencies are installed:
+
+    ```sh
+    % pip install -r requirements.txt
     ```
 
 2. Modify the script as needed, providing the language, origin tree, and target tree information.

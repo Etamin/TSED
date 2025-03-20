@@ -1,0 +1,3 @@
+tree-sitter==0.20.4
+tree-sitter-languages==1.10.2
+apted==1.0.3
