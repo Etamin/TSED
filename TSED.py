@@ -64,7 +64,7 @@ def get_Trees(lan,origin,target):
     tree_target=parse_tree_string(tree2_str)
     return tree_origin,tree_target,max(len1,len2)
 
-def Calaulte(lan,str1,str2,d,i,r):
+def Calculate(lan,str1,str2,d,i,r):
     
     tree1,tree2,max_len=get_Trees(lan,str1,str2)
     apted = APTED(tree1, tree2,PerEditOperationConfig(d, i, r))
