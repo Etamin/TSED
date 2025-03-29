@@ -54,7 +54,7 @@ Follow the rest of the steps in the virtual environment
     import TSED
     line1 = "Code1"
     line2 = "Code2"
-    ts_score=TSED.Calaulte("python",line1, line2, 1.0, 0.8, 1.0)
+    ts_score = TSED.Calculate("python",line1, line2, 1.0, 0.8, 1.0)
     ```
 
 ## Script Explanation
@@ -63,7 +63,7 @@ Follow the rest of the steps in the virtual environment
 - `parse_tree_string(tree_string)`: Parses the tree string and constructs a tree structure using the `Node` class.
 - `calculate_node_count(node)`: Calculates the number of nodes in the tree.
 - `get_Trees(lan,origin,target)`: Retrieves trees for the specified language, origin tree, and target tree.
-- `Calaulte(lan, str1, str2, d, i, r)`: Calculates the TSED using the APTED library with custom edit operation configurations.
+- `Calculate(lan, str1, str2, d, i, r)`: Calculates the TSED using the APTED library with custom edit operation configurations.
 
 ## Parameters
 
@@ -73,4 +73,6 @@ Follow the rest of the steps in the virtual environment
 
 ## Output
 
-The script outputs a similarity score between 0 and 1, representing the structural similarity be
+The script outputs a similarity score between 0 and 1, representing the
+structural similarity between two strings representing the origin and target
+trees of some source code.
