@@ -72,11 +72,10 @@ def get_Trees(lan, origin, target):
     return tree_origin, tree_target, max(len1, len2)
 
 
-def Calaulte(lan, str1, str2, d, i, r):
-    tree1, tree2, max_len = get_Trees(lan, str1, str2)
-    apted = APTED(tree1, tree2, PerEditOperationConfig(d, i, r))
-    # print_tree(tree1)
-    # print_tree(tree2)
+def Calculate(lan,str1,str2,d,i,r):
+    
+    tree1,tree2,max_len=get_Trees(lan,str1,str2)
+    apted = APTED(tree1, tree2,PerEditOperationConfig(d, i, r))
     res = apted.compute_edit_distance()
     if max_len > 0:
         if res > max_len:
