@@ -15,7 +15,60 @@ This Python script calculates the Tree Similarity of Edit Distance (TSED) betwee
 - [tree_sitter_language_pack `>=` 0.6.1](https://pypi.org/project/tree-sitter-languages/)
 - [apted](https://pypi.org/project/apted/)
 
+## Installation
+
+TSED is available on [PyPI](https://pypi.org/project/tsed/):
+
+```sh
+pip install tsed
+```
+
 ## Usage
+
+### Python package
+
+```python
+import TSED
+
+code1 = "def add(a, b):\n    return a + b"
+code2 = "def add(a, b):\n    if a > b:\n        return a - b\n    return a + b"
+score = TSED.Calculate("python", code1, code2, 1.0, 0.8, 1.0)
+print(score)  # 0.64
+```
+
+### Hugging Face `evaluate`
+
+TSED is also available as a metric on the Hugging Face Hub:
+[Etamin/tsed](https://huggingface.co/spaces/Etamin/tsed).
+
+```sh
+pip install evaluate tsed
+```
+
+```python
+import evaluate
+
+tsed = evaluate.load("Etamin/tsed")
+results = tsed.compute(
+    predictions=["def add(a, b):\n    return a + b", "for i in range(10):\n    print(i)"],
+    references=["def add(x, y):\n    return x + y", "i = 0\nwhile i < 10:\n    print(i)\n    i += 1"],
+    language="python",
+)
+print(results)  # {'tsed': 0.75625, 'tsed_scores': [1.0, 0.5125]}
+
+# Several references per prediction (the best score is kept), another language
+results = tsed.compute(
+    predictions=["SELECT name FROM users WHERE age > 30"],
+    references=[["SELECT name FROM users", "SELECT id FROM users WHERE age > 18"]],
+    language="sql",
+)
+print(results)  # {'tsed': 1.0, 'tsed_scores': [1.0]}
+```
+
+`compute` also accepts `deletion_weight` (default `1.0`), `insertion_weight`
+(default `0.8`) and `rename_weight` (default `1.0`).
+
+### From source
 
 Using a virtual environment is a useful way to manage dependencies,
 particularly with multiple versions of Python.
@@ -23,26 +76,10 @@ particularly with multiple versions of Python.
 ```sh
 % python -m venv .venv
 % source .venv/bin/activate
+% pip install -r requirements.txt
 ```
 
-Follow the rest of the steps in the virtual environment
-
-1. Ensure that the necessary dependencies are installed:
-
-    ```sh
-    % pip install -r requirements.txt
-    ```
-
-2. Modify the script as needed, providing the language, origin tree, and target tree information.
-
-3. Use in your code:
-
-    ```
-    import TSED
-    line1 = "Code1"
-    line2 = "Code2"
-    ts_score = TSED.Calculate("python", line1, line2, 1.0, 0.8, 1.0)
-    ```
+Then `import TSED` from the repository root, as above.
 
 ## Script Explanation
 
