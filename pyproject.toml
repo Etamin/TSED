@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tsed"
+version = "0.1.0"
+description = "Tree Similarity of Edit Distance (TSED): AST-based structural similarity for source code"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "tree-sitter>=0.23.2",
+    "tree-sitter-language-pack>=0.6.1",
+    "apted==1.0.3",
+]
+keywords = ["code similarity", "tree edit distance", "evaluation", "metric", "AST", "tree-sitter"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Homepage = "https://github.com/Etamin/TSED"
+Repository = "https://github.com/Etamin/TSED"
+"Hugging Face Metric" = "https://huggingface.co/spaces/Etamin/tsed"
+
+[tool.setuptools]
+py-modules = ["TSED"]

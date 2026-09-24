@@ -1,3 +1,8 @@
 # Don't commit the cache.
 __pycache__
 
+
+.venv
+dist
+build
+*.egg-info

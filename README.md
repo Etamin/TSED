@@ -68,3 +68,29 @@ Follow the rest of the steps in the virtual environment
 The script outputs a similarity score between 0 and 1, representing the
 structural similarity between two strings representing the origin and target
 trees of some source code.
+
+## Citation
+
+If you use TSED, please cite:
+
+```bibtex
+@inproceedings{song-etal-2024-revisiting,
+    title = "Revisiting Code Similarity Evaluation with Abstract Syntax Tree Edit Distance",
+    author = "Song, Yewei  and
+      Lothritz, Cedric  and
+      Tang, Daniel  and
+      Bissyand{\'e}, Tegawend{\'e}  and
+      Klein, Jacques",
+    editor = "Ku, Lun-Wei  and
+      Martins, Andre  and
+      Srikumar, Vivek",
+    booktitle = "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    month = aug,
+    year = "2024",
+    address = "Bangkok, Thailand",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.acl-short.3/",
+    doi = "10.18653/v1/2024.acl-short.3",
+    pages = "38--46",
+}
+```
